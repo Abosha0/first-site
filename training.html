@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج التدريب والتأهيل - شركة خبراء المعرفة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="contant">
+                <div class="moblie">
+                    <a href="tel:+96614804405">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        +96614804405
+                    </a>
+                    <a href="mailto:admin@kexperts.sa">
+                        <i class="fa-regular fa-envelope"></i>
+                        admin@kexperts.sa
+                    </a>
+                </div>
+                <div class="social">
+                    <a href="https://x.com/Kexpertsa"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/kexperts.sa/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:admin@kexperts.sa"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="./photo/Knowledge Experts - Logo-02 (1).png" alt="شركة خبراء المعرفة">
+                <div class="logo-text">
+                    <h2>شركة خبراء المعرفة</h2>
+                    <p>KNOWLEDGE EXPERTS COMPANY</p>
+                    <p>تعليم - تدريب - تطوير - تقنية - استشارات</p>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html#index">الرئيسية</a></li>
+                <li><a href="index.html#prog">برامجنا</a></li>
+                <li><a href="index.html#we">من نحن</a></li>
+                <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="index.html#prog" class="back-btn" title="العودة">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <nav class="breadcrumb">
+        <a href="index.html#index">الرئيسية</a>
+        <span class="separator">›</span>
+        <a href="index.html#prog">البرامج</a>
+        <span class="separator">›</span>
+        <span class="active">التدريب والتأهيل</span>
+    </nav>
+
+    <div class="program-page-hero">
+        <h1>برنامج التدريب والتأهيل</h1>
+        <p>برامج تدريبية متخصصة وشاملة مصممة لتطوير مهاراتك المهنية وتأهيلك لسوق العمل العالمي بمعايير جودة عالية</p>
+    </div>
+
+    <div class="program-page-container">
+        <div class="program-description">
+            <h2>عن برنامج التدريب والتأهيل</h2>
+            <p>يقدم برنامج التدريب والتأهيل في شركة خبراء المعرفة فرصة تعليمية متكاملة تجمع بين المعرفة النظرية والتطبيق العملي المباشر. يتم تصميم كل برنامج بعناية فائقة لتلبية احتياجات المتدربين والمؤسسات المختلفة.</p>
+            <p>يستفيد المتدربون من خبرة فريقنا المتميز من المدربين والمتخصصين الذين يمتلكون خبرات عملية غنية في التدريب النوعي والتنمية البشرية والتطوير المؤسسي.</p>
+            <p>من خلال الحالات الدراسية الواقعية والتطبيقات العملية، يكتسب المتدربون المهارات اللازمة للنجاح الوظيفي وتحقيق الأهداف المهنية بثقة واقتدار.</p>
+        </div>
+
+        <div class="features-section">
+            <h2>مميزات البرنامج</h2>
+            <div class="features-grid">
+                <div class="feature-item"><i class="fas fa-award"></i><p>معتمدة من جهات دولية</p></div>
+                <div class="feature-item"><i class="fas fa-user"></i><p>مدربون متخصصون</p></div>
+                <div class="feature-item"><i class="fas fa-book"></i><p>محتوى عملي وتفاعلي</p></div>
+                <div class="feature-item"><i class="fas fa-chart-line"></i><p>رفع مستوى الأداء</p></div>
+                <div class="feature-item"><i class="fas fa-users"></i><p>فصول صغيرة ومركزة</p></div>
+                <div class="feature-item"><i class="fas fa-trophy"></i><p>شهادات معترف بها</p></div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>تسجيل برنامج تدريبي</h2>
+            <p>يرجى ملء النموذج التالي للتسجيل في البرنامج التدريبي المرغوب</p>
+            <form id="trainingForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="trainName">الاسم الثلاثي:</label>
+                        <input type="text" id="trainName" name="name" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="trainID">رقم الهوية الوطنية:</label>
+                        <input type="text" id="trainID" name="id" placeholder="XXXXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="trainPhone">رقم الجوال:</label>
+                        <input type="tel" id="trainPhone" name="phone" placeholder="+966XXXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="trainEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="trainEmail" name="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="trainProgram">اسم البرنامج:</label>
+                        <select id="trainProgram" name="program" required>
+                            <option value="">اختر البرنامج</option>
+                            <option value="leadership">القيادة والإدارة</option>
+                            <option value="communication">مهارات التواصل الفعال</option>
+                            <option value="hr">إدارة الموارد البشرية</option>
+                            <option value="project">إدارة المشاريع</option>
+                            <option value="digital">التحول الرقمي</option>
+                            <option value="customer">خدمة العملاء</option>
+                            <option value="sales">مهارات البيع والتسويق</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="trainCity">مدينة الإقامة:</label>
+                        <select id="trainCity" name="city" required>
+                            <option value="">اختر المدينة</option>
+                            <option value="riyadh">الرياض</option>
+                            <option value="jeddah">جدة</option>
+                            <option value="madinah">المدينة المنورة</option>
+                            <option value="dammam">الدمام</option>
+                            <option value="abha">أبها</option>
+                            <option value="tabuk">تبوك</option>
+                            <option value="khobar">الخبر</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">تسجيل</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-info-circle"></i> معلومات إضافية</h3>
+            <p><strong>مدة البرامج:</strong> تتراوح بين أسبوع وثلاثة أشهر حسب نوع البرنامج</p>
+            <p><strong>طريقة التقديم:</strong> يمكنك التسجيل عبر هذا النموذج أو التواصل المباشر مع فريقنا</p>
+            <p><strong>الشهادات:</strong> جميع البرامج موصوفة بشهادات معتمدة من الشركة</p>
+            <p><strong>الدعم المستمر:</strong> يحصل المتدربون على دعم ومتابعة مستمرة بعد انتهاء البرنامج</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-contact">
+                <h3>معلومات الاتصال</h3>
+                <a href="https://goo.gl/j9K21F" class="contact-icon" title="الموقع">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="contact-text">7548 شارع حزام ابن عوف 2627 حي وادي مذينب 42364 المدينة المنورة</span>
+                </a>
+                <a href="tel:+96614804405" class="contact-icon" title="الهاتف">
+                    <i class="fas fa-phone"></i>
+                    <span class="contact-text">966148404405+</span>
+                </a>
+                <a href="tel:+966500552934" class="contact-icon" title="الجوال">
+                    <i class="fas fa-phone"></i>
+                    <span class="contact-text">966500552934+</span>
+                </a>
+            </div>
+            <div class="footer-section footer-menu">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html#index">الرئيسية</a></li>
+                    <li><a href="index.html#prog">برامجنا</a></li>
+                    <li><a href="index.html#we">من نحن</a></li>
+                    <li><a href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-social">
+                <h3>تابعنا</h3>
+                <div class="social-links">
+                    <a href="https://x.com/Kexpertsa" title="تويتر"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/kexperts.sa/" title="انستجرام"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:admin@kexperts.sa" title="بريد إلكتروني"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 شركة خبراء المعرفة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('trainingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fields = ['trainName','trainID','trainPhone','trainEmail','trainProgram','trainCity'];
+            for (const id of fields) {
+                if (!document.getElementById(id).value.trim()) {
+                    showNotification('الرجاء ملء جميع الحقول المطلوبة', 'error');
+                    return;
+                }
+            }
+            showNotification('تم تسجيل طلبك بنجاح! سيتم التواصل معك قريباً', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
