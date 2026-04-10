@@ -67,43 +67,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.menu-btn {
-  display: none;
-}
 
-#click {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .menu-btn {
-    display: block;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
-
-  
-  .navbar ul {
-    position: fixed;
-    top: 80px;
-    left: -100%; 
-    background: #444;
-    height: 100vh;
-    width: 100%;
-    display: block; 
-    text-align: center;
-    transition: all 0.3s ease; 
-  }
-
-  #click:checked ~ ul {
-    left: 0;
-  }
-
-  .navbar ul li {
-    margin: 40px 0;
-  }
-}
 
 /* ─── scroll-to-top ──────────────────────────────────────── */
 
@@ -141,11 +105,21 @@ a {
     display: none;
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 24px;
+    color: var(--ink-soft);
+    font-size: 22px;
     cursor: pointer;
+    padding: 6px;
+    border-radius: var(--radius-sm);
     transition: all 0.3s ease;
 }
+
+/* Show bars by default, hide X */
+.mobile-menu-btn .icon-times { display: none; }
+.mobile-menu-btn .icon-bars  { display: inline-block; }
+
+/* When open, swap to X */
+.mobile-menu-btn.is-open .icon-bars  { display: none; }
+.mobile-menu-btn.is-open .icon-times { display: inline-block; }
 
 nav a.active {
     color: var(--accent);
@@ -173,31 +147,49 @@ nav a.active {
 
 @media (max-width:768px) {
     .mobile-menu-btn {
-        display: flex;
+        display: block  ;
         align-items: center;
+        order: 3;
+        z-index: 101;
     }
 
-    nav ul {
-        display: none;
+    nav ul#nav-menu {
+        display: none !important;
         position: absolute;
-        top: 100%;
+        top: 70px;
         left: 0;
         right: 0;
         flex-direction: column;
-        background: rgba(30, 20, 60, 0.97);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
-        padding: 20px;
-        gap: 10px;
+        -webkit-backdrop-filter: blur(20px);
+        padding: 12px 16px 20px;
+        gap: 4px;
         z-index: 999;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        border-bottom: 1px solid var(--border);
     }
 
-    nav ul.active {
-        display: flex;
+    nav ul#nav-menu.active {
+        display: flex !important;
     }
 
     nav li a {
-        padding: 12px 20px;
+        padding: 12px 16px;
         border-radius: 8px;
+        color: var(--ink-soft);
+        font-size: 15px;
+        width: 100%;
+        display: block;
+    }
+
+    nav li a:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
+    }
+
+    .logo {
+        right: 0;
     }
 }
 
@@ -479,6 +471,7 @@ nav {
     z-index: 100;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
     animation: slideInDown 0.5s ease 0.05s both;
+    overflow: visible;
 }
 
 .logo {
@@ -3540,23 +3533,36 @@ button[type="submit"]:hover,
 
 @media (max-width: 768px) {
     nav {
-        padding: 0 20px;
+        padding: 0 16px;
         height: 64px;
+        position: relative;
     }
 
     .top {
-        padding: 8px 20px;
+        padding: 6px 16px;
     }
 
     .moblie {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .moblie a {
+        font-size: 12px;
     }
 
     .contant {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* Hide logo tooltip on mobile - it overflows */
+    .logo-text {
+        display: none;
     }
 
     .test {
@@ -3867,5 +3873,19 @@ button[type="submit"]:hover,
     .projects-stats {
         flex-direction: column;
         gap: 16px;
+    }
+
+    /* Hide phone/email text on very small screens, keep icons */
+    .moblie a span,
+    .moblie a:not(:first-child) {
+        display: none;
+    }
+
+    .moblie {
+        gap: 8px;
+    }
+
+    .moblie a:first-child {
+        display: flex;
     }
 }

@@ -200,36 +200,7 @@ document.querySelectorAll('.faq-question').forEach(q => {
     });
 });
 
-// ============================================
-// MOBILE MENU TOGGLE
-// ============================================
-function createMobileMenu() {
-    const nav = document.querySelector('nav ul');
-    if (!nav || window.innerWidth > 768) return;
-    if (document.querySelector('.mobile-menu-btn')) return;
 
-    const btn = document.createElement('button');
-    btn.className = 'mobile-menu-btn';
-    btn.innerHTML = '<i class="fas fa-bars"></i>';
-    btn.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        btn.innerHTML = nav.classList.contains('active')
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
-    document.querySelector('nav').insertBefore(btn, nav);
-}
-window.addEventListener('load', createMobileMenu);
-window.addEventListener('resize', () => {
-    const btn = document.querySelector('.mobile-menu-btn');
-    if (btn && window.innerWidth > 768) {
-        btn.remove();
-        const nav = document.querySelector('nav ul');
-        if (nav) nav.classList.remove('active');
-    } else {
-        createMobileMenu();
-    }
-});
 
 // ============================================
 // SCROLL-TO-TOP BUTTON
@@ -304,5 +275,25 @@ document.querySelectorAll('[data-tooltip]').forEach(el => {
         this.querySelector('.tooltip')?.remove();
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            // إضافة أو حذف كلاس active للقائمة
+            navMenu.classList.toggle('active');
+            // إضافة كلاس is-open للزرار عشان يغير الأيقونة لـ X
+            mobileToggle.classList.toggle('is-open');
+        });
+
+        // قفل القائمة لو ضغطت على أي لينك
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('is-open');
+            });
+        });
+    }
+});
 console.log('✨ Website interactivity loaded successfully!');
